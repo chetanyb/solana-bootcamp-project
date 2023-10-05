@@ -118,22 +118,22 @@ const viewAllTokens = async () => {
     setTokenAccounts(tokenAccounts.value);
     setStatus(`Found ${tokenAccounts.value.length} token accounts`);
     return ( <div>
-        <table>
+        <table class="min-w-full border text-white rounded-lg overflow-hidden mt-5">
             <thead>
-                <tr>
-                    <th>Mint Address</th>
-                    <th>Token Address</th>
-                    <th>Amount</th>
+                <tr className="rounded-md shadow-sm shadow-pink-500 p-2">
+                    <th class="w-1/4 px-4 py-2 text-left">Mint Address</th>
+                    <th class="w-1/4 px-4 py-2 text-left">Token Address</th>
+                    <th class="w-1/4 px-4 py-2 text-left">Amount</th>
                 </tr>
             </thead>
             <tbody>
     {tokenAccounts.value.map((tokenAccount) => {
         const accountData = AccountLayout.decode(tokenAccount.account.data);
         return (
-            <tr key={tokenAccount.pubkey.toBase58()}>
-                <td>{accountData.mint.toBase58()}</td>
-                <td>{tokenAccount.pubkey.toBase58()}</td>
-                <td>{accountData.amount}</td>
+            <tr className="rounded-md shadow-sm shadow-pink-500 p-2" key={tokenAccount.pubkey.toBase58()}>
+                <td class="px-4 py-2">{accountData.mint.toBase58()}</td>
+                <td class="px-4 py-2">{tokenAccount.pubkey.toBase58()}</td>
+                <td class="px-4 py-2">{accountData.amount}</td>
             </tr>
         );
     })}
@@ -144,25 +144,28 @@ const viewAllTokens = async () => {
 };
 
   return (
-    <div>
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={createNewToken}>Create New Token</button>
+    <div className='bg-[#131835] py-10'>
+      <input className='py-3.5 sm:px-6 px-3.5 outline-none border-2 border-white bg-transparent text-sm  rounded-lg sm:min-w-72' type="file" onChange={handleFileChange} />
+      <button className="shadow-xl text-xl shadow-black text-white bg-[#e32970] hover:bg-[#bd255f]
+      md:text-xs p-2 rounded-full ml-12" onClick={createNewToken}>Create New Token</button>
       <p>{status}</p>
         <input 
+        className='py-3.5 text-white sm:px-6 px-3.5 outline-none border-2 border-white bg-transparent text-sm  rounded-lg sm:min-w-72'
             type="text" 
             value={mintAddress} 
             onChange={(e) => setMintAddress(e.target.value)}
             placeholder="Enter Mint Address"
         />
-        <button onClick={createAccount}>Create New Token Account</button>
+        <button className={`shadow-lg shadow-black bg-[#e32970] hover:bg-[#bd255f] text-white font-bold py-2 px-4 rounded-full ml-5 mr-5`} onClick={createAccount}>Create New Token Account</button>
         <input 
+        className='py-3.5 text-white sm:px-6 px-3.5 outline-none border-2 border-white bg-transparent text-sm  rounded-lg sm:min-w-72'
         type='number'
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
         placeholder="Enter Amount"
         />
-        <button onClick={mintTokens}>Mint Tokens</button>
-        <button onClick={viewAllTokens}>View All Tokens</button>
+        <button className={`shadow-lg shadow-black bg-[#e32970] hover:bg-[#bd255f] text-white font-bold py-2 px-4 rounded-full ml-5 mr-5`} onClick={mintTokens}>Mint Tokens</button>
+        <button className={`shadow-lg shadow-black bg-[#e32970] hover:bg-[#bd255f] text-white font-bold py-2 px-4 rounded-full`} onClick={viewAllTokens}>View All Tokens</button>
       {tokenAccounts.length > 0 && (
         <table>
           <thead>
