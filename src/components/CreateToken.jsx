@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Connection, Keypair, LAMPORTS_PER_SOL } from '@solana/web3.js';
 import { AccountLayout, createMint, getOrCreateAssociatedTokenAccount, mintTo, TOKEN_PROGRAM_ID } from '@solana/spl-token';
 
+
 const CreateToken = () => {
   const [status, setStatus] = useState("");
   const [keypair, setKeypair] = useState(null);
@@ -36,7 +37,7 @@ const CreateToken = () => {
       
       setStatus("Creating new token...");
 
-      const connection = new Connection("htttp://localhost:8899", 'confirmed');
+      const connection = new Connection("http://127.0.0.1:8899", 'confirmed');
 
       const airdropSignature = await connection.requestAirdrop(keypair.publicKey, LAMPORTS_PER_SOL);
       await connection.confirmTransaction(airdropSignature);
@@ -62,7 +63,7 @@ const CreateToken = () => {
           return;
         }
 
-        const connection = new Connection("htttp://localhost:8899", 'confirmed');
+        const connection = new Connection("http://127.0.0.1:8899", 'confirmed');
 
         setStatus("Creating new token account...");
 
@@ -83,7 +84,7 @@ const CreateToken = () => {
       return;
     }
 
-    const connection = new Connection("htttp://localhost:8899", 'confirmed');
+    const connection = new Connection("http://127.0.0.1:8899", 'confirmed');
 
     setStatus("Minting tokens...");
 
@@ -105,7 +106,7 @@ const viewAllTokens = async () => {
       return;
     }
 
-    const connection = new Connection("htttp://localhost:8899", 'confirmed');
+    const connection = new Connection("http://127.0.0.1:8899", 'confirmed');
 
     setStatus("Viewing all tokens...");
 

@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Token from "./components/Token";
 import TokenPage from "./components/TokenPage";
+import CreateToken from "./components/CreateToken";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <Header />
         <Hero />
       </div>
-      <TokenPage />
+      <CreateToken />
       <Footer />
       <Token />
     </div>
