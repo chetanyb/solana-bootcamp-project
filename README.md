@@ -7,6 +7,13 @@ This repository contains a Solana token project developed as part of a Encode So
 ![image](https://github.com/chetanyb/solana-bootcamp-project/assets/12568291/f1225d7e-58ec-4390-85d9-3b6b8f5496be)
 ![image](https://github.com/chetanyb/solana-bootcamp-project/assets/12568291/0401502c-3820-4060-909d-4fd378db4a84)
 
+## Prerequisites
+Before you begin, ensure you have met the following requirements:
+- You have installed [Node.js](https://nodejs.org/)
+- You have installed [Solana CLI](https://docs.solana.com/cli/install-solana-cli-tools)
+- You have a working Solana test-validator running locally (Refer to the [Solana documentation](https://docs.solana.com/developing/test-validator) on setting up a test validator)
+
+
 ## Installation
 1. Clone the repository:
    ```bash
