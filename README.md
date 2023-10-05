@@ -11,10 +11,10 @@ This repository contains a Solana token project developed as part of a Encode So
    cd solana-bootcamp-project
 
 ## Install the dependencies:
-```bash npm install ```
+``` npm install ```
 
 ## Start the development server:
-```bash npm start ```
+``` npm start ```
 
 Open http://localhost:3000 to view the application in your browser.
 
