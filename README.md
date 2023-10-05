@@ -4,6 +4,9 @@
 ## Description
 This repository contains a Solana token project developed as part of a Encode Solana Bootcamp. It includes a React-based user interface for the airdrop of tokens on the Solana blockchain.
 
+![image](https://github.com/chetanyb/solana-bootcamp-project/assets/12568291/f1225d7e-58ec-4390-85d9-3b6b8f5496be)
+![image](https://github.com/chetanyb/solana-bootcamp-project/assets/12568291/0401502c-3820-4060-909d-4fd378db4a84)
+
 ## Installation
 1. Clone the repository:
    ```bash
