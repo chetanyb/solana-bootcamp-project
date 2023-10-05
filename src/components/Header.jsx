@@ -12,13 +12,13 @@ const Header = () => {
         <li className="mx-4 cursor-pointer">Explore</li>
         <li className="mx-4 cursor-pointer">Features</li>
         <li className="mx-4 cursor-pointer">Community</li>
-      </ul> */}
+      </ul> 
       <button
         className="shadow-xl shadow-black text-white bg-[#e32970] hover:bg-[#bd255f] md:text-xl p-3
       rounded-full cursor-pointer lg:ml-12"
       >
         Connect Wallet
-      </button>
+  </button>*/}
     </nav>
   );
 }
