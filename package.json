@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@project-serum/spl-token": "^0.26.0",
+    "@solana/web3.js": "^1.78.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hooks-global-state": "^2.1.0",

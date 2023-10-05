@@ -11,7 +11,7 @@ const Hero = () => {
   const [status, setStatus] = useState("");
   const handleAirdrop = async () => {
     setStatus("Processing...");
-    const connection = new Connection("http://127.0.0.1:8899");
+    const connection = new Connection("htttp://localhost:8899");
     const recipient = new PublicKey(address);
     
     try {
