@@ -26,7 +26,7 @@ Before you begin, ensure you have met the following requirements:
 ## Start the development server:
 ``` npm start ```
 
-Open http://localhost:3000 to view the application in your browser.
+Open http://localhost:5173 to view the application in your browser.
 
 # React + Vite
 
