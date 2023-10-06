@@ -148,7 +148,7 @@ const viewAllTokens = async () => {
       <input className='py-3.5 sm:px-6 px-3.5 outline-none border-2 border-white bg-transparent text-sm  rounded-lg sm:min-w-72' type="file" onChange={handleFileChange} />
       <button className="shadow-xl text-xl shadow-black text-white bg-[#e32970] hover:bg-[#bd255f]
       md:text-xs p-2 rounded-full ml-12" onClick={createNewToken}>Create New Token</button>
-      <p>{status}</p>
+      <p className='text-white text-2xl ml-2'>{status}</p>
         <input 
         className='py-3.5 text-white sm:px-6 px-3.5 outline-none border-2 border-white bg-transparent text-sm  rounded-lg sm:min-w-72'
             type="text" 
@@ -167,7 +167,7 @@ const viewAllTokens = async () => {
         <button className={`shadow-lg shadow-black bg-[#e32970] hover:bg-[#bd255f] text-white font-bold py-2 px-4 rounded-full ml-5 mr-5`} onClick={mintTokens}>Mint Tokens</button>
         <button className={`shadow-lg shadow-black bg-[#e32970] hover:bg-[#bd255f] text-white font-bold py-2 px-4 rounded-full`} onClick={viewAllTokens}>View All Tokens</button>
       {tokenAccounts.length > 0 && (
-        <table>
+        <table className='text-white text ml-2'>
           <thead>
             <tr>
               <th>Mint Address</th>
