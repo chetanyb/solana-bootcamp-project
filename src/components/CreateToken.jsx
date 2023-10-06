@@ -145,12 +145,11 @@ const viewAllTokens = async () => {
 
   return (
     <div className='bg-[#131835] py-10'>
-      <input className='py-3.5 sm:px-6 px-3.5 outline-none border-2 border-white bg-transparent text-sm  rounded-lg sm:min-w-72' type="file" onChange={handleFileChange} />
-      <button className="shadow-xl text-xl shadow-black text-white bg-[#e32970] hover:bg-[#bd255f]
-      md:text-xs p-2 rounded-full ml-12" onClick={createNewToken}>Create New Token</button>
+      <input className='py-3.5 sm:px-6 px-3.5 outline-none border-2 text-white border-white bg-transparent text-sm  rounded-lg sm:min-w-72' type="file" onChange={handleFileChange} />
+      <button className="shadow-lg shadow-black bg-[#e32970] hover:bg-[#bd255f] text-white font-bold py-2 px-4 ml-5 mr-5 rounded-full" onClick={createNewToken}>Create New Token</button>
       <p className='text-white text-2xl ml-2'>{status}</p>
         <input 
-        className='py-3.5 text-white sm:px-6 px-3.5 outline-none border-2 border-white bg-transparent text-sm  rounded-lg sm:min-w-72'
+        className='py-3.5 text-white sm:px-6 px-3.5 outline-none border-2 border-white bg-transparent text-sm rounded-lg sm:min-w-72'
             type="text" 
             value={mintAddress} 
             onChange={(e) => setMintAddress(e.target.value)}
