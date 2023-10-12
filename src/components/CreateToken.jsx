@@ -117,31 +117,32 @@ const viewAllTokens = async () => {
 
     setTokenAccounts(tokenAccounts.value);
     setStatus(`Found ${tokenAccounts.value.length} token accounts`);
-    return ( <div>
-        <table class="min-w-full border text-white rounded-lg overflow-hidden mt-5">
-            <thead>
-                <tr className="rounded-md shadow-sm shadow-pink-500 p-2">
-                    <th class="w-1/4 px-4 py-2 text-left">Mint Address</th>
-                    <th class="w-1/4 px-4 py-2 text-left">Token Address</th>
-                    <th class="w-1/4 px-4 py-2 text-left">Amount</th>
-                </tr>
-            </thead>
-            <tbody>
-    {tokenAccounts.value.map((tokenAccount) => {
-        const accountData = AccountLayout.decode(tokenAccount.account.data);
-        return (
-            <tr className="rounded-md shadow-sm shadow-pink-500 p-2" key={tokenAccount.pubkey.toBase58()}>
-                <td class="px-4 py-2">{accountData.mint.toBase58()}</td>
-                <td class="px-4 py-2">{tokenAccount.pubkey.toBase58()}</td>
-                <td class="px-4 py-2">{accountData.amount}</td>
-            </tr>
+    return (
+            <div>
+                <table className="min-w-full border border-collapse text-white rounded-lg overflow-hidden mt-5">
+                    <thead>
+                        <tr className="rounded-md shadow-sm shadow-pink-500 p-2">
+                            <th className="w-1/4 px-4 py-2 text-left border">Mint Address</th>
+                            <th className="w-1/4 px-4 py-2 text-left border">Token Address</th>
+                            <th className="w-1/4 px-4 py-2 text-left border">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {tokenAccounts.value.map((tokenAccount) => {
+                            const accountData = AccountLayout.decode(tokenAccount.account.data);
+                            return (
+                                <tr className="rounded-md shadow-sm shadow-pink-500 p-2" key={tokenAccount.pubkey.toBase58()}>
+                                    <td className="px-4 py-2 border">{accountData.mint.toBase58()}</td>
+                                    <td className="px-4 py-2 border">{tokenAccount.pubkey.toBase58()}</td>
+                                    <td className="px-4 py-2 border">{accountData.amount}</td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
+            </div>
         );
-    })}
-</tbody>
-        </table>
-    </div>
-    );
-};
+    };
 
   return (
     <div className='bg-[#131835] py-10'>
@@ -166,30 +167,30 @@ const viewAllTokens = async () => {
         <button className={`shadow-lg shadow-black bg-[#e32970] hover:bg-[#bd255f] text-white font-bold py-2 px-4 rounded-full ml-5 mr-5`} onClick={mintTokens}>Mint Tokens</button>
         <button className={`shadow-lg shadow-black bg-[#e32970] hover:bg-[#bd255f] text-white font-bold py-2 px-4 rounded-full`} onClick={viewAllTokens}>View All Tokens</button>
       {tokenAccounts.length > 0 && (
-        <table className='text-white text ml-2'>
-          <thead>
-            <tr>
-              <th>Mint Address</th>
-              <th>Token Address</th>
-              <th>Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tokenAccounts.map((tokenAccount) => {
-              const accountData = AccountLayout.decode(tokenAccount.account.data);
-              return (
-                <tr key={tokenAccount.pubkey.toBase58()}>
-                  <td>{accountData.mint.toBase58()}</td>
-                  <td>{tokenAccount.pubkey.toBase58()}</td>
-                  <td>{accountData.amount.toString()}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      )}
-    </div>
-  );
+                <table className='text-white text ml-2 border border-collapse'>
+                    <thead>
+                        <tr>
+                            <th className='border'>Mint Address</th>
+                            <th className='border'>Token Address</th>
+                            <th className='border'>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {tokenAccounts.map((tokenAccount) => {
+                            const accountData = AccountLayout.decode(tokenAccount.account.data);
+                            return (
+                                <tr key={tokenAccount.pubkey.toBase58()}>
+                                    <td className='border'>{accountData.mint.toBase58()}</td>
+                                    <td className='border'>{tokenAccount.pubkey.toBase58()}</td>
+                                    <td className='border'>{accountData.amount.toString()}</td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
+            )}
+        </div>
+    );
 };
 
 export default CreateToken;
