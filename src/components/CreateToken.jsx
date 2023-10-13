@@ -167,7 +167,7 @@ const viewAllTokens = async () => {
         <button className={`shadow-lg shadow-black bg-[#e32970] hover:bg-[#bd255f] text-white font-bold py-2 px-4 rounded-full ml-5 mr-5`} onClick={mintTokens}>Mint Tokens</button>
         <button className={`shadow-lg shadow-black bg-[#e32970] hover:bg-[#bd255f] text-white font-bold py-2 px-4 rounded-full`} onClick={viewAllTokens}>View All Tokens</button>
       {tokenAccounts.length > 0 && (
-                <table className='text-white text ml-2 border border-collapse'>
+                <table className='text-white text border border-collapse mt-5'>
                     <thead>
                         <tr>
                             <th className='border'>Mint Address</th>
